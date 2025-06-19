@@ -1,0 +1,1 @@
+Solusi yang saya pikirkan adalah dengan menggunakan Redis untuk menyimpan status kursi selama proses booking berjalan. Ketika seorang user memilih kursi, sistem akan menandai kursi tersebut sebagai "locked" di Redis dengan TTL (time-to-live) selama 5 menit. 
