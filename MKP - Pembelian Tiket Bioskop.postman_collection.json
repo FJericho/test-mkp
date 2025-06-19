@@ -1,0 +1,481 @@
+{
+	"info": {
+		"_postman_id": "b60958ff-a93e-463a-88d0-3a3d2309ae83",
+		"name": "MKP - Pembelian Tiket Bioskop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30174711",
+		"_collection_link": "https://peneleh-api.postman.co/workspace/peneleh-api-Workspace~61fc574c-8e3d-49db-87f2-6e5bcd230765/collection/30174711-b60958ff-a93e-463a-88d0-3a3d2309ae83?action=share&source=collection_link&creator=30174711"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"admin@gmail.com\",\n    \"password\": \"admin123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"johndoe@example.com\",\n  \"password\": \"john123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "film",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTc1MDI5MjE5OCwibmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwidXNlcl9pZCI6ImE1YTc1MWYxLWUyMWMtNDA1Mi05MzI2LTQyMzViMWI2NWNiOCJ9.PDDv-hc7YzxI70t5glL2OyRjWR9mipUyJ1fIHsz4igM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"The Shawshank Redemption\",\n  \"genre\": \"Drama\",\n  \"duration\": 142,\n  \"description\": \"Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/admin/film",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"film"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTc1MDI5MjE5OCwibmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwidXNlcl9pZCI6ImE1YTc1MWYxLWUyMWMtNDA1Mi05MzI2LTQyMzViMWI2NWNiOCJ9.PDDv-hc7YzxI70t5glL2OyRjWR9mipUyJ1fIHsz4igM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/admin/film",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"film"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTc1MDI5MjE5OCwibmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwidXNlcl9pZCI6ImE1YTc1MWYxLWUyMWMtNDA1Mi05MzI2LTQyMzViMWI2NWNiOCJ9.PDDv-hc7YzxI70t5glL2OyRjWR9mipUyJ1fIHsz4igM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/admin/film/5d86df74-1b3f-4462-ad49-a08705709b68",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"film",
+								"5d86df74-1b3f-4462-ad49-a08705709b68"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Studio",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTc1MDI5MjE5OCwibmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwidXNlcl9pZCI6ImE1YTc1MWYxLWUyMWMtNDA1Mi05MzI2LTQyMzViMWI2NWNiOCJ9.PDDv-hc7YzxI70t5glL2OyRjWR9mipUyJ1fIHsz4igM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"20th Century Studios\",\n  \"address\": \"10201 W Pico Blvd, Los Angeles, CA 90064\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/admin/studio",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"studio"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTc1MDI5MjE5OCwibmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwidXNlcl9pZCI6ImE1YTc1MWYxLWUyMWMtNDA1Mi05MzI2LTQyMzViMWI2NWNiOCJ9.PDDv-hc7YzxI70t5glL2OyRjWR9mipUyJ1fIHsz4igM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/admin/studio",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"studio"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTc1MDI5MjE5OCwibmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwidXNlcl9pZCI6ImE1YTc1MWYxLWUyMWMtNDA1Mi05MzI2LTQyMzViMWI2NWNiOCJ9.PDDv-hc7YzxI70t5glL2OyRjWR9mipUyJ1fIHsz4igM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"The Godfather\",\n  \"genre\": \"Crime\",\n  \"duration\": 175,\n  \"description\": \"The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/admin/studio/2e9d4a6d-8717-4eab-a5d1-f2dd9e2425f4",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"studio",
+								"2e9d4a6d-8717-4eab-a5d1-f2dd9e2425f4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Showtime",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTc1MDI5MjE5OCwibmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwidXNlcl9pZCI6ImE1YTc1MWYxLWUyMWMtNDA1Mi05MzI2LTQyMzViMWI2NWNiOCJ9.PDDv-hc7YzxI70t5glL2OyRjWR9mipUyJ1fIHsz4igM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"film_id\": \"6cd6663d-bcf2-4406-a327-97aebe62c524\",\n  \"studio_id\": \"aaf78908-c741-491d-b3d9-027351176470\",\n  \"start_time\": \"2023-07-02T12:00:00Z\",\n  \"end_time\": \"2023-07-02T14:00:00Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/admin/showtime",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"showtime"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/showtime",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"showtime"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTc1MDI5MjE5OCwibmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwidXNlcl9pZCI6ImE1YTc1MWYxLWUyMWMtNDA1Mi05MzI2LTQyMzViMWI2NWNiOCJ9.PDDv-hc7YzxI70t5glL2OyRjWR9mipUyJ1fIHsz4igM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/admin/showtime/c1e3aa3c-c2d9-4adc-8981-015aa5bcf845",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"showtime",
+								"c1e3aa3c-c2d9-4adc-8981-015aa5bcf845"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTc1MDI5MjE5OCwibmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwidXNlcl9pZCI6ImE1YTc1MWYxLWUyMWMtNDA1Mi05MzI2LTQyMzViMWI2NWNiOCJ9.PDDv-hc7YzxI70t5glL2OyRjWR9mipUyJ1fIHsz4igM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"film_id\": \"6cd6663d-bcf2-4406-a327-97aebe62c524\",\n  \"studio_id\": \"74c98266-2b7d-472d-91df-fc593d4566e9\",\n  \"start_time\": \"2025-07-02T12:00:00Z\",\n  \"end_time\": \"2025-07-02T14:00:00Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/admin/showtime/c1e3aa3c-c2d9-4adc-8981-015aa5bcf845",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"showtime",
+								"c1e3aa3c-c2d9-4adc-8981-015aa5bcf845"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTc1MDI5MjE5OCwibmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwidXNlcl9pZCI6ImE1YTc1MWYxLWUyMWMtNDA1Mi05MzI2LTQyMzViMWI2NWNiOCJ9.PDDv-hc7YzxI70t5glL2OyRjWR9mipUyJ1fIHsz4igM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"The Godfather\",\n  \"genre\": \"Crime\",\n  \"duration\": 175,\n  \"description\": \"The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/admin/studio/2e9d4a6d-8717-4eab-a5d1-f2dd9e2425f4",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"studio",
+								"2e9d4a6d-8717-4eab-a5d1-f2dd9e2425f4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
